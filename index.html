@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Colleges - Library Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            font-size: 12px; 
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+            padding-top: 20px;
+        }
+        .card {
+            border: 3px solid #000; 
+            border-radius: 8px;
+            padding: 15px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-left: 15px;
+            border: 3px solid #000; 
+        }
+        .details {
+            font-size: 12px; 
+            text-align: left;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>ABC Colleges</h1>
+    <h2>Library Users</h2>
+    <div class="container"></div>
+
+    <script>
+        const students = [
+            {
+                picture: "https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww",
+                name: "Samantha Smith",
+                course: "BSIT",
+                year_level: "3BG2",
+                adviser: "Mr. Robert De Guzman",
+                school_year: "2020-2021"
+            },
+            {
+                picture: "https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg",
+                name: "Joanna Cruz",
+                course: "BSIT",
+                year_level: "3BG1",
+                adviser: "Mr. Rolando Dela Cruz",
+                school_year: "2024-2025"
+            },
+            {
+                picture: "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
+                name: "Johnny Calagan",
+                course: "BSIT",
+                year_level: "3BG2",
+                adviser: "Mr. Ramon Guiter",
+                school_year: "2025-2026"
+            },
+            {
+                picture: "https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg",
+                name: "Berylle Dionisio",
+                course: "BSIT",
+                year_level: "3AG2",
+                adviser: "Mr. Robert Roxas",
+                school_year: "2024-2025"
+            },
+            {
+                picture: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?cs=srgb&dl=pexels-justin-shaifer-501272-1222271.jpg&fm=jpg",
+                name: "Mark Gomez",
+                course: "BSIT",
+                year_level: "3CG2",
+                adviser: "Mr. Ramon Dela Cruz",
+                school_year: "2025-2026"
+            },
+            {
+                picture: "https://engineering.unl.edu/images/staff/Kayla-Person.jpg",
+                name: "Sofia D. First",
+                course: "BSIT",
+                year_level: "3AG2",
+                adviser: "Mrs. Maricel Cruz",
+                school_year: "2025-2026"
+            },
+            {
+                picture: "https://media.istockphoto.com/id/1369508766/photo/beautiful-successful-latin-woman-smiling.jpg?s=612x612&w=0&k=20&c=LoznG6eGT42_rs9G1dOLumOTlAveLpuOi_U755l_fqI=",
+                name: "Maria Clara",
+                course: "BSIT",
+                year_level: "3CG2",
+                adviser: "Mr. Razma Cruz",
+                school_year: "2025-2026"
+                
+            },
+            {
+                picture: "https://img.freepik.com/free-photo/isolated-shot-pleasant-looking-cheerful-beautiful-brunette-posing-against-pink-wall_273609-20417.jpg",
+                name: "Julia Rivera",
+                course: "BSIT",
+                year_level: "3BG2",
+                adviser: "Mr. Basillo Cruz",
+                school_year: "2025-2026"
+            },
+            {
+                picture: "https://plus.unsplash.com/premium_photo-1682089892133-556bde898f2c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwYm95fGVufDB8fDB8fHww",
+                name: "Josh Delos Reyes",
+                course: "BSIT",
+                year_level: "3BG2",
+                adviser: "Mr. Josefine Babalu",
+                school_year: "2025-2026"
+            },
+            {
+                picture: "https://img.freepik.com/free-photo/person-woman-smiling-studio-portrait_1303-2281.jpg",
+                name: "Maria Santos",
+                course: "BSIT",
+                year_level: "3BG2",
+                adviser: "Mrs. Liza Reyes",
+                school_year: "2025-2026"
+            }
+        ];
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.querySelector(".container");
+            students.forEach(student => {
+                container.innerHTML += `
+                    <div class="card">
+                        <div class="details">
+                            <p><strong>Name:</strong> ${student.name}</p>
+                            <p><strong>Course:</strong> ${student.course}</p>
+                            <p><strong>Year Level:</strong> ${student.year_level}</p>
+                            <p><strong>Adviser:</strong> ${student.adviser}</p>
+                            <p><strong>School Year:</strong> ${student.school_year}</p>
+                        </div>
+                        <img src="${student.picture}" alt="Profile Picture">
+                    </div>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
